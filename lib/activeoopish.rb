@@ -1,0 +1,1 @@
+require 'activeoopish/version'
