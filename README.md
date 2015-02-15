@@ -39,10 +39,14 @@ end
 ### RSpec
 
 ```rb
-require 'activeoopish/rspec'
+require 'activeoopish/rspec_helper'
 require 'shoulda-matchers'
 
-declear BookValidator, :with_activeoopish_helper do
+describe Book do
+  it { should be_monitored_by BookValidator }
+end
+
+describe BookValidator, :with_activeoopish_helper do
   include_context 'describe declaration' do
     it { should validate_presence_of(:author) }
 
@@ -50,7 +54,8 @@ declear BookValidator, :with_activeoopish_helper do
 
     context 'when #biography? returns true' do
       before do
-        allow_any_instance_of(described_class).to receive(:biography?).and_return(true)
+        allow_any_instance_of(described_class)
+          .to receive(:biography?).and_return(true)
       end
 
       it 'calls #title_must_include_author_name' do
