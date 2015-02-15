@@ -1,10 +1,6 @@
 require 'activeoopish/rspec_helper'
 
-describe ActiveOOPish::Validator do
-  let(:model_class) do
-    ActiveOOPish::RSpecHelper::ValidationTarget
-  end
-
+describe ActiveOOPish::Validator, :with_activeoopish_helpers do
   describe '.monitor' do
     subject do
       validator_class.monitor(model_class)

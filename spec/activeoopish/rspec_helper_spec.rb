@@ -54,3 +54,26 @@ describe 'activeoopish matchers' do
     end
   end
 end
+
+class SampleValidator < ActiveOOPish::Validator
+  declear do
+    validates(
+      :attr,
+      exclusion: { in: %w(a b c) },
+      inclusion: { in: %w(x y z) },
+      length: { minimum: 1, maximum: 10 },
+      numericality: { only_integer: true },
+      presence: true
+    )
+  end
+end
+
+describe SampleValidator, :with_activeoopish_helpers do
+  include_context 'describe declaration' do
+    it { should validate_exclusion_of(:attr).in_array(%w(a b c)) }
+    # it { should validate_inclusion_of(:attr).in_array(%w(x y z)) }
+    it { should validate_length_of(:attr).is_at_least(1).is_at_most(10) }
+    it { should validate_numericality_of(:attr).only_integer }
+    it { should validate_presence_of(:attr) }
+  end
+end

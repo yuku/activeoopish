@@ -1,6 +1,7 @@
 require 'rspec/core'
 require 'rspec/matchers'
 require 'active_model'
+require 'active_support'
 
 RSpec::Matchers.define :be_monitored_by do |validator_class|
   match do |actual|
@@ -10,6 +11,27 @@ end
 
 module ActiveOOPish
   module RSpecHelper
+    module SharedContext
+      extend ActiveSupport::Concern
+
+      included do
+        let(:model_class) do
+          Class.new(ActiveOOPish::RSpecHelper::ValidationTarget) do
+            def self.name
+              'ValidationTarget'
+            end
+          end
+        end
+
+        shared_context 'describe declaration', :describe_declaration do
+          subject do
+            described_class.monitor(model_class)
+            model_class.new
+          end
+        end
+      end
+    end
+
     class ValidationTarget
       include ActiveModel::Validations
 
@@ -39,4 +61,8 @@ module ActiveOOPish
       end
     end
   end
+end
+
+RSpec.configure do |config|
+  config.include ActiveOOPish::RSpecHelper::SharedContext, :with_activeoopish_helpers
 end
