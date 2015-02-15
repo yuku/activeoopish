@@ -55,8 +55,6 @@ module ActiveOOPish
           @attributes[name] = args.first
         elsif @attributes.include?(name)
           read_attribute_for_validation(name)
-        else
-          super
         end
       end
     end

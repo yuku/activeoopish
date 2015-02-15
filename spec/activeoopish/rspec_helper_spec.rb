@@ -1,17 +1,7 @@
 require 'activeoopish/rspec_helper'
 
 describe 'activeoopish matchers' do
-  describe 'be_monitored_by matcher' do
-    let(:model_class) do
-      Struct.new(:attr) do
-        include ActiveModel::Validations
-
-        def self.name
-          'ModelClass'
-        end
-      end
-    end
-
+  describe 'be_monitored_by matcher', :with_activeoopish_helpers do
     let(:validator_class) do
       Class.new(ActiveOOPish::Validator) do
         declear do
