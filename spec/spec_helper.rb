@@ -1,3 +1,6 @@
+require 'coveralls'
+Coveralls.wear!
+
 require 'active_model'
 require 'shoulda-matchers'
 
