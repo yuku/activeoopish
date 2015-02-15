@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.authors         = ['Yuku Takahashi']
   spec.email           = ['yuku@qiita.com']
   spec.summary         = 'Simple OOP-ish tools for Rails'
-  spec.homepage        = 'https://github.com/increments/activeoopish'
+  spec.homepage        = 'https://github.com/yuku-t/activeoopish'
   spec.license         = 'MIT'
 
   spec.files           = `git ls-files -z`.split("\x0")
