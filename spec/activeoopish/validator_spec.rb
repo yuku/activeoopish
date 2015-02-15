@@ -1,17 +1,13 @@
+require 'activeoopish/rspec_helper'
+
 describe ActiveOOPish::Validator do
+  let(:model_class) do
+    ActiveOOPish::RSpecHelper::ValidationTarget
+  end
+
   describe '.monitor' do
     subject do
       validator_class.monitor(model_class)
-    end
-
-    let(:model_class) do
-      Struct.new(:attr) do
-        include ActiveModel::Validations
-
-        def self.name
-          'ModelClass'
-        end
-      end
     end
 
     context 'when the validator_class does not have declaration' do
@@ -155,16 +151,6 @@ describe ActiveOOPish::Validator do
 
         def self.name
           'Sample::Validator'
-        end
-      end
-    end
-
-    let(:model_class) do
-      Class.new do
-        include ActiveModel::Validations
-
-        def self.name
-          'ModelClass'
         end
       end
     end
