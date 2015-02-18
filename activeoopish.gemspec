@@ -4,7 +4,7 @@ require "activeoopish/version"
 
 Gem::Specification.new do |spec|
   spec.name            = 'activeoopish'
-  spec.version         = ActiveOOPish::VERSION
+  spec.version         = ActiveOopish::VERSION
   spec.authors         = ['Yuku Takahashi']
   spec.email           = ['yuku@qiita.com']
   spec.summary         = 'Simple OOP-ish tools for Rails'

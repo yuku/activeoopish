@@ -1,15 +1,15 @@
-# AvtiveOOPish
+# AvtiveOopish
 
 [![Build Status](https://travis-ci.org/yuku-t/activeoopish.svg?branch=master)](https://travis-ci.org/yuku-t/activeoopish) [![Code Climate](https://codeclimate.com/github/yuku-t/activeoopish/badges/gpa.svg)](https://codeclimate.com/github/yuku-t/activeoopish) [![Coverage Status](https://coveralls.io/repos/yuku-t/activeoopish/badge.svg)](https://coveralls.io/r/yuku-t/activeoopish) [![Dependency Status](https://gemnasium.com/yuku-t/activeoopish.svg)](https://gemnasium.com/yuku-t/activeoopish)
 
 Simple tools for better OOP in Rails projects.
 
-## ActiveOOPish::Validator
+## ActiveOopish::Validator
 
 Encapsulates the responsibility of validating a model into a validator.
 
 ```rb
-class BookValidator < ActiveOOPish::Validator
+class BookValidator < ActiveOopish::Validator
   declear do
     validates :author, presence: true
 

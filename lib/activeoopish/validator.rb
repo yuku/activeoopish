@@ -1,11 +1,11 @@
 require 'active_support/core_ext/module/delegation'
 
-module ActiveOOPish
+module ActiveOopish
   # Public: Base class for validators.
   #
   # Example
   #
-  #   class BookValidator < ActiveOOPish::Validator
+  #   class BookValidator < ActiveOopish::Validator
   #     declear do
   #       validates :author, presence: true
   #       validate :title_must_include_author_name, if: :biography?
@@ -41,7 +41,7 @@ module ActiveOOPish
   #   # => "author cannot write a biography of another person"
   #
   class Validator
-    # Public: Generic ActiveOOPish::Validator related error.
+    # Public: Generic ActiveOopish::Validator related error.
     # Exceptions raised in this class should inherit from Error.
     class Error < StandardError
     end

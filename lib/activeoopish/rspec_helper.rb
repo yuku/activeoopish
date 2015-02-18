@@ -9,14 +9,14 @@ RSpec::Matchers.define :be_monitored_by do |validator_class|
   end
 end
 
-module ActiveOOPish
+module ActiveOopish
   module RSpecHelper
     module SharedContext
       extend ActiveSupport::Concern
 
       included do
         let(:model_class) do
-          Class.new(ActiveOOPish::RSpecHelper::ValidationTarget) do
+          Class.new(ActiveOopish::RSpecHelper::ValidationTarget) do
             def self.name
               'ValidationTarget'
             end
@@ -62,5 +62,5 @@ module ActiveOOPish
 end
 
 RSpec.configure do |config|
-  config.include ActiveOOPish::RSpecHelper::SharedContext, :with_activeoopish_helpers
+  config.include ActiveOopish::RSpecHelper::SharedContext, :with_activeoopish_helpers
 end

@@ -3,7 +3,7 @@ require 'activeoopish/rspec_helper'
 describe 'activeoopish matchers' do
   describe 'be_monitored_by matcher', :with_activeoopish_helpers do
     let(:validator_class) do
-      Class.new(ActiveOOPish::Validator) do
+      Class.new(ActiveOopish::Validator) do
         declear do
         end
 
@@ -45,7 +45,7 @@ describe 'activeoopish matchers' do
   end
 end
 
-class SampleValidator < ActiveOOPish::Validator
+class SampleValidator < ActiveOopish::Validator
   declear do
     validates(
       :attr,
