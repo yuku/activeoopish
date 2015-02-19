@@ -4,6 +4,27 @@
 
 Simple tools for better OOP in Rails projects.
 
+## ActiveOopish::Inheritance
+
+Instantiate a model instance as sub class's instance based on records value.
+
+```rb
+class Book < ActiveRecord::Base
+  include ActiveOopish::Inheritance
+
+  # If the record whose 'category_code' column equals `BIOGRAPHY` is fetched from
+  # the database, it will be instantiated as Biography class instance.
+  instantiate_as 'Biography', category_code: BIOGRAPHY
+end
+
+class Biography < Book
+end
+```
+
+### Why not STI?
+
+Single table inheritance (STI) requires a string column which stores the instance's class name, but it is hard to prepare such thing in some cases. For example suppose your project came from another WAP to Rails, it may already have running DB and it does not satisfy the requirement by default. In addition, these columns are too Rails specific.
+
 ## ActiveOopish::Validator
 
 Encapsulates the responsibility of validating a model into a validator.
