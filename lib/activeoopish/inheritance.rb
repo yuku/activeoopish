@@ -12,10 +12,10 @@ module ActiveOopish
       # Public:
       #
       # class_name - A String represents the class which instantiates an instance.
-      # condition  - A Hash with :when key.
+      # condition  - A Hash.
       #
       def instantiate_as(class_name, options = {})
-        @instantiation_rules << { class_name: class_name, condition: options[:when].stringify_keys }
+        @instantiation_rules << { class_name: class_name, condition: options.stringify_keys }
       end
 
       private
