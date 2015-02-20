@@ -4,10 +4,6 @@ module ActiveOopish
   module Inheritance
     extend ActiveSupport::Concern
 
-    included do
-      instance_variable_set('@instantiation_rules', [])
-    end
-
     module ClassMethods
       # Public:
       #
@@ -25,6 +21,7 @@ module ActiveOopish
       #
       # Returns a Class to instantiate an instance.
       def discriminate_class_for_record(record)
+        @instantiation_rules ||= []
         @instantiation_rules.each do |rule|
           satisfy_rule = rule[:condition].each_pair.all? do |column, expected|
             record[column] == expected
