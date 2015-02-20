@@ -4,6 +4,10 @@ module ActiveOopish
   module Inheritance
     extend ActiveSupport::Concern
 
+    included do
+      instance_variable_set('@instantiation_rules', [])
+    end
+
     module ClassMethods
       # Public:
       #
@@ -11,6 +15,7 @@ module ActiveOopish
       # condition  - A Hash.
       #
       def instantiate_as(class_name, options = {})
+        @instantiation_rules ||= []
         @instantiation_rules << { class_name: class_name, condition: options.stringify_keys }
       end
 
