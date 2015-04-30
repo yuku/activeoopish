@@ -1,4 +1,4 @@
-# AvtiveOopish
+# ActiveOopish
 
 [![Gem Version](https://badge.fury.io/rb/activeoopish.svg)](http://badge.fury.io/rb/activeoopish) [![Build Status](https://travis-ci.org/yuku-t/activeoopish.svg?branch=master)](https://travis-ci.org/yuku-t/activeoopish) [![Code Climate](https://codeclimate.com/github/yuku-t/activeoopish/badges/gpa.svg)](https://codeclimate.com/github/yuku-t/activeoopish) [![Coverage Status](https://coveralls.io/repos/yuku-t/activeoopish/badge.svg)](https://coveralls.io/r/yuku-t/activeoopish) [![Dependency Status](https://gemnasium.com/yuku-t/activeoopish.svg)](https://gemnasium.com/yuku-t/activeoopish)
 
